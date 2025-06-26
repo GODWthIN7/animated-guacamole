@@ -1,0 +1,84 @@
+from fastapi import FastAPI, HTTPException
+from pymongo import MongoClient, errors
+from pydantic import BaseModel
+from typing import List
+import os
+
+app = FastAPI()
+
+# MongoDB connection (local development)
+MONGO_URL = os.environ.get("MONGO_URL", "mongodb://localhost:27017/")
+client = MongoClient(MONGO_URL)
+db = client["mergington"]
+activities_col = db["activities"]
+
+# Existing hardcoded activities
+initial_activities = {
+    "Chess Club": {
+        "description": "Learn strategies and compete in chess tournaments",
+        "schedule": "Fridays, 3:30 PM - 5:00 PM",
+        "max_participants": 12,
+        "participants": ["michael@mergington.edu", "daniel@mergington.edu"]
+    },
+    "Programming Class": {
+        "description": "Learn programming fundamentals and build software projects",
+        "schedule": "Tuesdays and Thursdays, 3:30 PM - 4:30 PM",
+        "max_participants": 20,
+        "participants": ["emma@mergington.edu", "sophia@mergington.edu"]
+    },
+    "Gym Class": {
+        "description": "Physical education and sports activities",
+        "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
+        "max_participants": 30,
+        "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    }
+}
+
+# Pre-populate MongoDB with initial activities if not present
+def prepopulate_activities():
+    for name, data in initial_activities.items():
+        if not activities_col.find_one({"_id": name}):
+            doc = {"_id": name, **data}
+            activities_col.insert_one(doc)
+
+prepopulate_activities()
+
+class ActivitySignup(BaseModel):
+    email: str
+
+@app.get("/activities")
+def get_activities():
+    activities = {}
+    for doc in activities_col.find():
+        name = doc["_id"]
+        doc.pop("_id")
+        activities[name] = doc
+    return activities
+
+@app.post("/activities/{activity_name}/signup")
+def signup_for_activity(activity_name: str, signup: ActivitySignup):
+    activity = activities_col.find_one({"_id": activity_name})
+    if not activity:
+        raise HTTPException(status_code=404, detail="Activity not found")
+    if signup.email in activity["participants"]:
+        return {"message": f"{signup.email} already signed up for {activity_name}"}
+    if len(activity["participants"]) >= activity["max_participants"]:
+        raise HTTPException(status_code=400, detail="Activity is full")
+    activities_col.update_one(
+        {"_id": activity_name},
+        {"$push": {"participants": signup.email}}
+    )
+    return {"message": f"Signed up {signup.email} for {activity_name}"}
+
+@app.post("/activities/{activity_name}/unregister")
+def unregister_from_activity(activity_name: str, signup: ActivitySignup):
+    activity = activities_col.find_one({"_id": activity_name})
+    if not activity:
+        raise HTTPException(status_code=404, detail="Activity not found")
+    if signup.email not in activity["participants"]:
+        raise HTTPException(status_code=404, detail="Participant not found")
+    activities_col.update_one(
+        {"_id": activity_name},
+        {"$pull": {"participants": signup.email}}
+    )
+    return {"message": f"Unregistered {signup.email} from {activity_name}"}
