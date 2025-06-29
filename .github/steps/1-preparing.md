@@ -64,14 +64,12 @@ Let's start up our development environment, use copilot to learn a bit about the
    > ```
 
    > **Note**: It is not necessary to follow Copilot's recommended instructions. We have already prepared the environment for you.
-   <details>
-   <summary>What is @workspace?</summary>
-   Nice job noticing the details, but let's just use it for now. 🤓 We promise to explain in the next step.
-   </details>
+   > **What is @workspace?**
+   > Nice job noticing the details, but let's just use it for now. 🤓 We promise to explain in the next step.
 
 1. Now that we know a bit more about the project, let's actually try running it! In the left sidebar, select the `Run and Debug` tab and then press the **Start Debugging** icon.
 
-   <img width="300" alt="image" src="https://github.com/user-attachments/assets/50b27f2a-5eab-4827-9343-ab5bce62357e" />
+   ![image](https://github.com/user-attachments/assets/50b27f2a-5eab-4827-9343-ab5bce62357e)
 
 1. We want to see our webpage running in a browser, so let's find the url and port. If it isn't visible, expand the lower panel and select the **Ports** tab.
 
@@ -108,7 +106,6 @@ Great work! Now that we are familiar with the app and we know it works, let's as
    ```
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    > ```prompt
    > Awesome! Thanks, Copilot! Let's use the
@@ -121,12 +118,4 @@ Great work! Now that we are familiar with the app and we know it works, let's as
 
 1. Now that your branch is pushed to GitHub, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
 
-<details>
-<summary>Having trouble? 🤷</summary><br/>
-
-If you don't get feedback, here are some things to check:
-
-- Make sure your created the branch with the exact name `accelerate-with-copilot`. No prefixes or suffixes.
-- Make sure the branch was indeed published to your repository.
-
-</details>
+### Having trouble? 🤷
