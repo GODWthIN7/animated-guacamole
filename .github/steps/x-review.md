@@ -1,8 +1,8 @@
-## Review
+# Review
 
 _Congratulations, you've completed this exercise and learned a lot about GitHub Copilot!_
 
-<img src="https://octodex.github.com/images/jetpacktocat.png" alt=celebrate width=200 align=right>
+![Celebrate Octocat](https://octodex.github.com/images/jetpacktocat.png)
 
 Here's a recap of your accomplishments:
 
@@ -11,7 +11,7 @@ Here's a recap of your accomplishments:
 - Used Copilot to generate commit messages and pull request summaries.
 - Learned how to request Copilot to review your code.
 
-### What's next?
+## What's next?
 
 - Continue working on the project
   - Use Copilot to add a function for students to unregister from an activity.

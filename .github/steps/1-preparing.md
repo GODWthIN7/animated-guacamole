@@ -1,14 +1,14 @@
-## Step 1: Hello Copilot
+# Step 1: Hello Copilot
 
 Welcome to your **"Getting Started with GitHub Copilot"** exercise! :robot:
 
 In this exercise, you will be using different GitHub Copilot features to work on a website that allows students of Mergington High School to sign up for extracurricular activities. 🎻 ⚽️ ♟️
 
-<img width="600" alt="screenshot of Mergington High School WebApp" src="https://github.com/user-attachments/assets/472398fd-1aa1-4084-b443-4e242deb30d9" />
+![screenshot of Mergington High School WebApp](https://github.com/user-attachments/assets/472398fd-1aa1-4084-b443-4e242deb30d9)
 
-### What is GitHub Copilot?
+## What is GitHub Copilot?
 
-<img width="150" align="right" alt="copilot logo" src="https://github.com/user-attachments/assets/4d22496d-850b-4785-aafe-11cba03cd5f2" />
+![copilot logo](https://github.com/user-attachments/assets/4d22496d-850b-4785-aafe-11cba03cd5f2)
 
 GitHub Copilot is an AI coding assistant that helps you write code faster and with less effort, allowing you to focus more energy on problem solving and collaboration.
 
@@ -45,27 +45,25 @@ Let's start up our development environment, use copilot to learn a bit about the
 
 1. In the left sidebar, click the extensions tab and verify that the `GitHub Copilot` and `Python` extensions are installed and enabled.
 
-   <img width="350" alt="copilot extension for VS Code" src="https://github.com/user-attachments/assets/ef1ef984-17fc-4b20-a9a6-65a866def468" />
+   ![copilot extension for VS Code](https://github.com/user-attachments/assets/ef1ef984-17fc-4b20-a9a6-65a866def468)
 
-   <img width="350" alt="python extension for VS Code" src="https://github.com/user-attachments/assets/3040c0f5-1658-47e2-a439-20504a384f77" />
+   ![python extension for VS Code](https://github.com/user-attachments/assets/3040c0f5-1658-47e2-a439-20504a384f77)
 
 1. At the top of VS Code, locate and click the **Copilot icon** to open a Copilot Chat panel.
 
-   <img width="150" alt="image" src="https://github.com/user-attachments/assets/5e64db46-95cb-415d-badc-b6b8677f10c1" />
+   ![image](https://github.com/user-attachments/assets/5e64db46-95cb-415d-badc-b6b8677f10c1)
 
 1. If this is your first time using GitHub Copilot, you will need to accept the usage terms to continue.
 
 1. Enter the below prompt to ask Copilot to introduce you to the project.
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
    > ```prompt
    > @workspace Please briefly explain the structure of this project.
    > What should I do to run it?
    > ```
 
    > **Note**: It is not necessary to follow Copilot's recommended instructions. We have already prepared the environment for you.
-
    <details>
    <summary>What is @workspace?</summary>
    Nice job noticing the details, but let's just use it for now. 🤓 We promise to explain in the next step.
@@ -96,11 +94,10 @@ Great work! Now that we are familiar with the app and we know it works, let's as
 1. Let's ask Copilot to help us remember a command we have forgotten: creating a branch and publishing it.
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    > ```prompt
    > Hey copilot, how can I create and publish a new Git branch?
    > ```
-
    > **Tip:** This is a simple example, but Copilot is great at providing more tailored commands that might involve loops, pattern matching, file modification, and more! Don't be afraid to ask Copilot for a suggestion. Just remember it is a suggestion and you should always verify it first to be safe.
 
 1. Copilot probably gave us a command like the following. Rather than manually modify it, let's respond back to tell Copilot to use a particular name.
@@ -112,12 +109,11 @@ Great work! Now that we are familiar with the app and we know it works, let's as
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    > ```prompt
    > Awesome! Thanks, Copilot! Let's use the
    > branch name "accelerate-with-copilot".
    > ```
-
-   > **Tip:** If Copilot doesn't give you quite what you want, you can always continue explaining what you need. Copilot will remember the conversation history for follow-up responses.
 
 1. Now that we are happy with the command, press the `Run` button to let Copilot run it for us. No need to copy and paste!
 

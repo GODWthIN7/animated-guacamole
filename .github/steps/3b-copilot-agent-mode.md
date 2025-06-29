@@ -1,9 +1,9 @@
-### :keyboard: Bonus Activity - GitHub Copilot Agent Mode
+# :keyboard: Bonus Activity - GitHub Copilot Agent Mode
 
 > [!NOTE]
 > This activity is optional and not graded.
 
-### What is "Agent" Mode?
+## What is "Agent" Mode?
 
 **Agent** mode enhances Copilot by automatically providing it feedback, typically the types of feedback you would provide after reviewing Copilot's suggested edits.
 
@@ -20,7 +20,7 @@ Let's experiment with some more open-ended requests that will add more functiona
 
 1. Open the **Copilot** chat panel and use the dropdown menu to switch to **Agent** mode.
 
-   <img width="250" alt="image" src="https://github.com/user-attachments/assets/8c537e2a-d89a-4908-8d35-77c7f0830805" />
+   ![image](https://github.com/user-attachments/assets/8c537e2a-d89a-4908-8d35-77c7f0830805)
 
 1. Time for our test! Let's ask Copilot to add functionality for removing participants.
 
@@ -59,7 +59,7 @@ Just for fun, let's try something even more difficult and open-ended to see what
 
 1. (optional) If it is available for you, you might try another model such as `Claude 3.5 Sonnet`.
 
-   <img width="250" alt="image" src="https://github.com/user-attachments/assets/16125b88-8428-4f62-9c1b-5761e26ed888" />
+   ![image](https://github.com/user-attachments/assets/16125b88-8428-4f62-9c1b-5761e26ed888)
 
 1. Ask Copilot to install a local database service.
 
