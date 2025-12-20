@@ -21,21 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
-        // Participants section
-        let participantsHTML = `<div style="background:#f6f8fa;border-radius:8px;margin:1em 0 0.5em 0;padding:0.75em 1em;box-shadow:0 1px 2px rgba(0,0,0,0.03);">
-          <h5 style='margin:0 0 0.5em 0;font-size:1.1em;color:#2d5a88;'>Participants</h5>
-          <ul style='margin:0;padding-left:0;list-style:none;color:#444;font-size:1em;'>`;
+        // Participants section (uses CSS classes instead of inline styles)
+        let participantsHTML = `
+          <div class="participants">
+            <h5>Participants</h5>
+            <ul class="participants-list">
+        `;
         if (details.participants && details.participants.length > 0) {
           details.participants.forEach(participant => {
-            participantsHTML += `<li style='display:flex;align-items:center;gap:0.5em;margin-bottom:0.2em;'>
-              <span style='flex:1;'>${participant}</span>
-              <button class="delete-participant" title="Unregister" data-activity="${name}" data-email="${participant}" style="background:none;border:none;cursor:pointer;padding:0;margin:0;color:#c62828;font-size:1.2em;">
-                <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='3 6 5 6 21 6'></polyline><path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2'></path><line x1='10' y1='11' x2='10' y2='17'></line><line x1='14' y1='11' x2='14' y2='17'></line></svg>
-              </button>
-            </li>`;
+            participantsHTML += `
+              <li>
+                <span class="participant-email">${participant}</span>
+                <button class="delete-participant" title="Unregister" data-activity="${name}" data-email="${participant}" aria-label="Unregister">
+                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='3 6 5 6 21 6'></polyline><path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2'></path><line x1='10' y1='11' x2='10' y2='17'></line><line x1='14' y1='11' x2='14' y2='17'></line></svg>
+                </button>
+              </li>
+            `;
           });
         } else {
-          participantsHTML += `<li style='color:#888;'>No participants yet.</li>`;
+          participantsHTML += `<li class="empty">No participants yet.</li>`;
         }
         participantsHTML += `</ul></div>`;
 
